@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Emotion Recognition</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="smart-alert" class="hidden">
+        <div class="alert-content">
+            <span class="alert-icon">⚠️</span>
+            <p>We noticed you've been feeling sad for a while. Taking a break or talking to someone might help.</p>
+            <button id="close-alert">&times;</button>
+        </div>
+    </div>
+
+    <header>
+        <div class="logo">
+            <div class="orb"></div>
+            <h1>Aura <span>Vision</span></h1>
+        </div>
+        <p class="subtitle">Smart Real-Time Emotion & Feedback System</p>
+    </header>
+
+    <main>
+        <section class="camera-section card glass">
+            <div class="header-row">
+                <h2>Live Feed</h2>
+                <div class="status-indicator">
+                    <span id="cam-status-dot" class="dot"></span>
+                    <span id="cam-status-text">Camera Off</span>
+                </div>
+            </div>
+            
+            <div class="video-container">
+                <video id="videoElement" autoplay playsinline></video>
+                <canvas id="overlay"></canvas>
+                <div class="placeholder" id="video-placeholder">
+                    <span>Camera is inactive</span>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button id="start-btn" class="btn primary">Start Camera</button>
+                <button id="stop-btn" class="btn danger" disabled>Stop Camera</button>
+            </div>
+        </section>
+
+        <aside class="sidebar">
+            <div class="emotion-section card glass">
+                <h2>Current Emotion</h2>
+                <div class="emotion-display">
+                    <span id="dominant-emotion">--</span>
+                </div>
+            </div>
+
+            <div class="analytics-section card glass">
+                <div class="header-row">
+                    <h2>Analytics</h2>
+                    <button id="refresh-analytics" class="btn small">Refresh</button>
+                </div>
+                
+                <div class="charts-container">
+                    <div class="chart-box">
+                        <h3>Distribution</h3>
+                        <img id="pie-chart" src="" alt="Emotion Pie Chart" class="hidden">
+                        <div class="chart-placeholder" id="pie-placeholder">No data</div>
+                    </div>
+                    
+                    <div class="chart-box">
+                        <h3>Timeline</h3>
+                        <img id="line-chart" src="" alt="Emotion Timeline" class="hidden">
+                        <div class="chart-placeholder" id="line-placeholder">No data</div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
